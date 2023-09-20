@@ -20,3 +20,44 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
+
+
+
+let myDocument = document.documentElement;
+  let fullscreen = document.getElementById("btnFull");
+
+  fullscreen.addEventListener("click", ()=> {
+    if(fullscreen.textContent == "Fullskjerm") {
+      if(myDocument.requestFullscreen){
+        myDocument.requestFullscreen();
+      }
+      else if(myDocument.msRequestFullscreen) {
+        myDocument.msRequestFullscreen();
+      }
+      else if(myDocument.mozRequestFullscreen){
+        myDocument.mozRequestFullscreen();
+      }
+      else if(myDocument.webkitRequestFullscreen){
+        myDocument.webkitRequestFullscreen();
+      }
+      fullscreen.textContent = "Lukk"
+    }
+    else {
+
+      if(document.exitFullscreen){
+        document.exitFullscreen();
+      }
+      else if(msexitFullscreen) {
+        document.msexitFullscreen();
+      }
+      else if(mozexitFullscreen) {
+        document.mozexitFullscreen();
+      }
+      else if(webkitexitFullscreen) {
+        document.webkitexitFullscreen();
+      }
+      fullscreen.textContent = "Fullskjerm";
+    }
+
+  });
