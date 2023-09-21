@@ -43,3 +43,7 @@ button {
   margin: auto;
   justify-content: center;
 }
+
+.hidden {
+  display: none;
+}
